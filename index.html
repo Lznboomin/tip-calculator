@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Tip calculator</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  </head>
+  <body>
+    <div id="app">
+      <div class="wrapper mt">
+        <div class="h-center">
+          <div class="card">
+            <div class="card-header">
+              <h1 class="center abscenter">Tip Calculator</h1>
+            </div>
+            <div class="card-body">
+              <h3>Bill amount: <input type="number" v-model="bill" @keyup.enter="calculate"/></h3>
+              <h3>Tip percent: <input type="number" v-model="tipPercent" @keyup.enter="calculate"/></h3>
+
+              <button class="btn success" @click="calculate">Calculate</button>
+              <button class="btn danger" @click="reset">Reset</button>
+
+              <h3>
+                Tip amount: <span>{{ tip }}</span>
+              </h3>
+              <h3>
+                Total to pay: <span>{{ total }}</span>
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
